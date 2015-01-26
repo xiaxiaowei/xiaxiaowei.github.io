@@ -7,30 +7,30 @@ kramdown:
 
 # 作者信息
 author: 
-  name: 闫肃
-  email: suyan0830@gmail.com
-  link: http://yansu.org
-  weibo: http://weibo.com/yansu0711
-  github: http://github.com/suyan
+  name: 小为
+  email: xiaxiaowei@outlook.com
+  link: http://xiaxiaowei.github.io
+  weibo:
+  github: http://github.com/xiaxiaowei
 
 # 站点信息
-title: 闫肃的博客 
-description: 闫肃的博客
-url: http://yansu.org
+title: 小为的博客
+description: 小为的博客
+url: http://xiaxiaowei.github.io
 rss_url: /pages/atom.xml
 
 # gavatar头像及Favicon
-gavatar: http://7u2ho6.com1.z0.glb.clouddn.com/gavatar.png
-favicon: http://7u2ho6.com1.z0.glb.clouddn.com/favicon.ico
+gavatar: 
+favicon:
 
 # google analytics 设置
 ga:
-  id: UA-54767140-1
-  url: yansu.org
+  id:
+  url:
 
 # disqus 设置
 disqus:
-  shortname: suyan-zh
+  shortname:
 
 # 主题设置，自动激活某个标签
 active: 技术
