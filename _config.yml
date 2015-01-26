@@ -20,8 +20,8 @@ url: http://xiaxiaowei.github.io
 rss_url: /pages/atom.xml
 
 # gavatar头像及Favicon
-gavatar: 
-favicon:
+gavatar: http://7u2pqg.com1.z0.glb.clouddn.com/blog_header.jpg
+favicon: http://7u2pqg.com1.z0.glb.clouddn.com/blog_header.jpg
 
 # google analytics 设置
 ga:
