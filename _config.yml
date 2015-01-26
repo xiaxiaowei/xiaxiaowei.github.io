@@ -33,12 +33,12 @@ disqus:
   shortname:
 
 # 主题设置，自动激活某个标签
-active: 技术
+active: iOS
 
 # 首页除了最新文章外显示分类
 cates: 
+  - iOS
   - Python
-  - OpenStack
 
 # 中文本地化
 locals:
