@@ -12,6 +12,7 @@ description:
 ## CocoaPods安装
 
 *Step.1* 修改Ruby Resources，采用taboo的镜像
+
 ```
 $ gem sources --remove https://rubygems.org/
 $ gem sources -a http://ruby.taobao.org/
