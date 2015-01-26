@@ -170,13 +170,21 @@ end
 ```
 
 **Step.2** 安装AFNetworking
+
 ```
 $pod install
 ```
+
 有时可能比较慢，一直在Analyzing dependencies。原因在于当执行install命令的时候会升级CocoaPods的spec仓库，加一个参数可以省略这一步，然后速度就会提升不少。如下：
+
+```
 pod install --verbose --no-repo-update
+```
+
 上面的verbose能够看到详细的安装日志，no-repo-update用来设定不更新spec仓库。
 下面是详细的安装日志
+
+```
 $ pod install --verbose --no-repo-update
   Preparing
 
@@ -252,39 +260,62 @@ Integrating client project
 [!] From now on use `CocoaPodsUseDemo.xcworkspace`.
 
 Integrating target `Pods-CocoaPodsUseDemo` (`CocoaPodsUseDemo.xcodeproj` project)
+```
 
 注意上面的“[!] From now on use `CocoaPodsUseDemo.xcworkspace`”，后面XCode打开CocoaPodsUseDemo.xcworkspace，不使用xcodeproj。
-3.打开CocoaPods生成的workspace文件.
+
+**Step.3** 打开CocoaPods生成的workspace文件
  
 上面能够看到多了一个Pods工程，里面添加有AFNetworking。
 编译工程，在模拟器下链接错误。修改Library Search Paths，添加模拟器lib路径，如下图。
- 
 编译成功。
 
-四、创建的Pod
+## 4.创建的Pod
 将自己的工程模块创建成Pod給其他工程使用。
-1.本地创建TestPod目录
+**Step.1** 本地创建TestPod目录
+
+```
 $ mkdir TestPod
 $ cd TestPod
 $ mkdir Classes
-2.创建.podspec文件
+```
+
+**Step.2** 创建.podspec文件
+
+```
 $ pod spec create TestPod
 Specification created at TestPod.podspec
-3.提交TestPod到svn库，如并提交到SVN库。
+```
+
+**Step.3** 提交TestPod到svn库，如并提交到SVN库。
 如：https://ip:port/svn/CocoaPods/TestPod。
-4.修改TestPod.podspec如下
+**Step.4** 修改TestPod.podspec如下
+
+```
 s.source = { :svn => "https://ip:port/svn/CocoaPods/TestPod"}
 s.source_files  = "Classes", "Classes/**/*.{h,m}"
+```
+
 提交SVN
-5.打开CocoaPodsUseDemo工程的Podfile，添加
+
+**Step.5** 打开CocoaPodsUseDemo工程的Podfile，添加
+
+```
 pod 'TestPod', :svn => 'https://ip:port/svn/CocoaPods/TestPod'
-6.更新
+```
+
+**Step.6** 更新
+
+```
 pod update --verbose --no-repo-update
-7.打开CocoaPodsUseDemo.workspace，会看到多了一个Pod，如下图：
+```
+
+**Step.7** 打开CocoaPodsUseDemo.workspace，会看到多了一个Pod，如下图：
  
-8.编译工程，Success!
-五、创建Repo (Git)
-1.仓库的结构
+**Step.8** 编译工程，Success!
+
+## 5.创建Repo (Git)
+**Step.1** 仓库的结构
  .
 ├── Specs
     └── [SPEC_NAME]
@@ -292,10 +323,16 @@ pod update --verbose --no-repo-update
 └── [SPEC_NAME].podspec
 本地创建如下目录：
  
-2.将仓库提交到Git服务器
-3.在本地环境添加repo
+**Step.2** 将仓库提交到Git服务器
+**Step.3** 在本地环境添加repo
+
+```
 $ pod repo add REPO_NAME SOURCE_URL
-4.查看
+```
+
+**Step.4** 查看
+
+```
 $ pod repo list
 pod repo list
 
@@ -303,19 +340,35 @@ master
 - Type: git (origin)
 - URL:  https://github.com/CocoaPods/Specs.git
 - Path: /Users/xxw/.cocoapods/repos/master
-5. To check if your installation is successful and ready to go:
+```
+
+**Step.5** To check if your installation is successful and ready to go:
+
+```
 $ cd ~/.cocoapods/repos/REPO_NAME
 $ pod repo lint .
-6.Add your Podspec to your repo
+```
 
+**Step.6** Add your Podspec to your repo
 Make sure you've tagged and versioned your source, then run:
-$ pod repo push REPO_NAME SPEC_NAME.podspec
-7. Your private Pod is ready to be used in a Podfile. You can use your spec repository using the source directive as shown in the following example:
-source 'URL_TO_REPOSITORY'
-8. remove a Private Repo
-pod repo remove [name]
 
-六、创建Repo (SVN)
+```
+$ pod repo push REPO_NAME SPEC_NAME.podspec
+```
+
+**Step.7** Your private Pod is ready to be used in a Podfile. You can use your spec repository using the source directive as shown in the following example:
+
+```
+source 'URL_TO_REPOSITORY'
+```
+
+**Step.8** remove a Private Repo
+
+```
+pod repo remove [name]
+```
+
+## 6.创建Repo (SVN)
 CocoaPods要求Repo为git，但可以使用开源的插件https://github.com/clarkda/cocoapods-repo-svn添加对SVN Repo的支持。
 1.安装cocoapods-repo-svn
 $ sudo gem install cocoapods-repo-svn
