@@ -30,7 +30,7 @@ ga:
 
 # disqus 设置
 disqus:
-  shortname: xiaxiaowei
+  shortname: xiaowei
 
 # 主题设置，自动激活某个标签
 active: ios
