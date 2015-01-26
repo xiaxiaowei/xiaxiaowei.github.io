@@ -155,10 +155,11 @@ target 'CocoaPodsUseDemoTests' do
 end
 ```
 
-三、添加第三方库
-1.需要添加AFNetworking，修改Podfile文件
-$vim Podfile
-修改内容为：
+## 3.添加第三方库
+
+**Step.1** 需要添加AFNetworking，修改Podfile文件内容为：
+
+```
 platform :ios, '7.0'
 source 'https://github.com/CocoaPods/Specs.git'
 target 'CocoaPodsUseDemo' do
@@ -166,9 +167,12 @@ target 'CocoaPodsUseDemo' do
 end
 target 'CocoaPodsUseDemoTests' do
 end
+```
 
-2.安装AFNetworking
+**Step.2** 安装AFNetworking
+```
 $pod install
+```
 有时可能比较慢，一直在Analyzing dependencies。原因在于当执行install命令的时候会升级CocoaPods的spec仓库，加一个参数可以省略这一步，然后速度就会提升不少。如下：
 pod install --verbose --no-repo-update
 上面的verbose能够看到详细的安装日志，no-repo-update用来设定不更新spec仓库。
