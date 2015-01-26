@@ -13,20 +13,49 @@ description:
 
 **Step.1** 修改Ruby Resources，采用taboo的镜像
 
-```shell
+```
 $ gem sources --remove https://rubygems.org/
 $ gem sources -a http://ruby.taobao.org/
 ```
 
 通过`-l`参数查看一下设置:
 
-```sh
+```
 $ gem sources -l
 
 *** CURRENT SOURCES ***
   
 http://ruby.taobao.org/
 ```
+
+**Step.2** 打开Xcode6，进入Preferences，点击Locations选项，将Command Line Tools 版本变成Xcode6
+
+**Step.3** 删除旧版本cocoapods
+
+```
+$ sudo gem uninstall cocoapods
+```
+
+**Step.4** 安装xcodeproj
+
+```
+$ sudo gem install xcodeproj
+```
+
+安装时控制台输出
+
+```
+Fetching: xcodeproj-0.19.4.gem (100%)
+Successfully installed xcodeproj-0.19.4
+Parsing documentation for xcodeproj-0.19.4
+Installing ri documentation for xcodeproj-0.19.4
+1 gem installed
+```
+
+xcodeproj安装成功
+
+**Step.5** 安装cocoapods
+
 
 
 
