@@ -13,14 +13,14 @@ description:
 
 **Step.1** 修改Ruby Resources，采用taboo的镜像
 
-```
+```shell
 $ gem sources --remove https://rubygems.org/
 $ gem sources -a http://ruby.taobao.org/
 ```
 
-查看`-l`参数查看一下设置:
+通过`-l`参数查看一下设置:
 
-```
+```sh
 $ gem sources -l
 
 *** CURRENT SOURCES ***
