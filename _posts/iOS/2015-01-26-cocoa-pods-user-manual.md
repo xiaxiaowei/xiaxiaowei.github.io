@@ -7,11 +7,24 @@ keywords: iOS,CocoaPods
 description: 
 ---
 
-> 这两个概念对于 Laravel 的使用者来说应该并不陌生，尤其是当你希望扩展或者替换 Laravel 核心库的时候，理解和合理使用它们可以极大提升 Laravel 的战斗力。这里以创建一个自己的 ServiceProvider 为例理解 Inversion of Control 和 Facade 在 Laravel 中的应用。
+> 详细介绍CocoaPods的集成和使用，已经定制Pods。
 
-#Cocoa Pods
+## CocoaPods安装
 
-## 控制反转（Inversion of Control）
+### 修改Ruby Resources，采用taboo的镜像
+```
+$ gem sources --remove https://rubygems.org/
+$ gem sources -a http://ruby.taobao.org/
+```
+
+
+
+
+
+
+
+
+
 
 ### 什么是 IoC
 > 控制反转（Inversion of Control，缩写为IoC），是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）。通过控制反转，对象在被创建的时候，由一个调控系统内所有对象的外界实体，将其所依赖的对象的引用传递给它。 — [维基百科](http://zh.wikipedia.org/wiki/控制反转)
