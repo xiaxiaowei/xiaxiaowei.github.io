@@ -7,7 +7,7 @@ keywords: iOS,CocoaPods
 description: 
 ---
 
-> 详细介绍CocoaPods的集成和使用，已经定制Pods。
+> 详细介绍CocoaPods的集成和使用，以及如何定制自己的Pod。
 
 ## 1.CocoaPods安装
 
