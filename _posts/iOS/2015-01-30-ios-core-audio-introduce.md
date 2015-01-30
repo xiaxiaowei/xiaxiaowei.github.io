@@ -1,15 +1,41 @@
 ---
 layout: post
-title: 通过远程虚拟接口(RVI)进行设备抓包
+title: iOS Core Audio
 category: iOS
-tags: [iOS, RVI]
-keywords: iOS, RVI
-description: 
+tags: [iOS, Audio]
+keywords: iOS, Audio
+description: iOS音频相关的知识汇总
 ---
 
-> 在iOS5中新引入了“远程虚拟接口(remote virtual interface ,RVI)“的特性,可以在Mac中建立一个虚拟网络接口来作为iOS设备的网络栈，这样所有经过iOS设备的流量都会经过此虚拟接口，此虚拟接口代替了iOS设备本身的协议栈,但并没有将网络流量中转到Mac本身的网络连接上，这样所有网络连接都是iOS设备本身的，Mac电脑本身连不联网或者连接的网络类型都没有关系，而iOS设备本身可以为任意网络类型,2G/3G/WiFi等。在Mac电脑上使用任意抓包工具抓取RVI接口上的数据包就可以看到iOS设备上的所有网络数据.
+> iOS音频开发相关的知识，包括AudioFileStream/AudioQueue等。
 
-## 1.CocoaPods安装
+## 概述
+
+介绍Audio相关的基本知识点。
+
+### PCM/Sample/Frame/Packet
+
+> Most Core Audio services use and manipulate audio in linear pulse-code-modulated (linear PCM) format, the most common uncompressed digital audio data format. Digital audio recording creates PCM data by measuring an analog (real world) audio signal’s magnitude at regular intervals (the sampling rate) and converting each sample to a numerical value. Standard compact disc (CD) audio uses a sampling rate of 44.1 kHz, with a 16-bit integer describing each sample—constituting the resolution or bit depth.
+> A **sample** is single numerical value for a single channel.
+> A `frame` is a collection of time-coincident samples. For instance, a stereo sound file has two samples per
+frame, one for the left channel and one for the right channel.
+> A `packet` is a collection of one or more contiguous frames. In linear PCM audio, a packet is always a single frame. In compressed formats, it is typically more. A packet defines the smallest meaningful set of frames for a given audio data format.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 **Step.1** 修改Ruby Resources，采用taboo的镜像
 
