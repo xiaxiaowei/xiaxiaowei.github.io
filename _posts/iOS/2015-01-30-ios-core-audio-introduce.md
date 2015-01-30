@@ -16,9 +16,12 @@ description: iOS音频相关的知识汇总
 ### PCM/Sample/Frame/Packet
 
 > Most Core Audio services use and manipulate audio in linear pulse-code-modulated (linear PCM) format, the most common uncompressed digital audio data format. Digital audio recording creates PCM data by measuring an analog (real world) audio signal’s magnitude at regular intervals (the sampling rate) and converting each sample to a numerical value. Standard compact disc (CD) audio uses a sampling rate of 44.1 kHz, with a 16-bit integer describing each sample—constituting the resolution or bit depth.
-> A **sample** is single numerical value for a single channel.
+
+> A `sample` is single numerical value for a single channel.
+
 > A `frame` is a collection of time-coincident samples. For instance, a stereo sound file has two samples per
 frame, one for the left channel and one for the right channel.
+
 > A `packet` is a collection of one or more contiguous frames. In linear PCM audio, a packet is always a single frame. In compressed formats, it is typically more. A packet defines the smallest meaningful set of frames for a given audio data format.
 
 
