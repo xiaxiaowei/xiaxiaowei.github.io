@@ -32,6 +32,27 @@ MP3格式中的数据通常由两部分组成，一部分为ID3用来存储歌�
 
 MP3格式中的码率（BitRate）代表了MP3数据的压缩质量，现在常用的码率有128kbit/s、160kbit/s、320kbit/s等等，这个值越高声音质量也就越高。MP3编码方式常用的有两种固定码率(Constant bitrate，CBR)和可变码率(Variable bitrate，VBR)。
 
+###AudioStreamBasicDescription
+
+表示音频文件结构信息，是一个AudioStreamBasicDescription的结构：
+
+```
+struct AudioStreamBasicDescription
+{
+    Float64 mSampleRate;
+    UInt32  mFormatID;
+    UInt32  mFormatFlags;
+    UInt32  mBytesPerPacket;
+    UInt32  mFramesPerPacket;
+    UInt32  mBytesPerFrame;
+    UInt32  mChannelsPerFrame;
+    UInt32  mBitsPerChannel;
+    UInt32  mReserved;
+};
+```
+
+
+
 
 
 
