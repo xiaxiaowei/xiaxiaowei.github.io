@@ -13,7 +13,7 @@ description: iOS音频相关的知识汇总
 
 介绍Audio相关的基本知识点。
 
-###PCM/Sample/Frame/Packet
+### PCM/Sample/Frame/Packet
 
 > Most Core Audio services use and manipulate audio in linear pulse-code-modulated (linear PCM) format, the most common uncompressed digital audio data format. Digital audio recording creates PCM data by measuring an analog (real world) audio signal’s magnitude at regular intervals (the sampling rate) and converting each sample to a numerical value. Standard compact disc (CD) audio uses a sampling rate of 44.1 kHz, with a 16-bit integer describing each sample—constituting the resolution or bit depth.
 
@@ -32,7 +32,7 @@ MP3格式中的数据通常由两部分组成，一部分为ID3用来存储歌�
 
 MP3格式中的码率（BitRate）代表了MP3数据的压缩质量，现在常用的码率有128kbit/s、160kbit/s、320kbit/s等等，这个值越高声音质量也就越高。MP3编码方式常用的有两种固定码率(Constant bitrate，CBR)和可变码率(Variable bitrate，VBR)。
 
-###AudioStreamBasicDescription
+### AudioStreamBasicDescription
 
 表示音频文件结构信息，是一个AudioStreamBasicDescription的结构：
 
@@ -51,8 +51,32 @@ struct AudioStreamBasicDescription
 };
 ```
 
+### AudioFileStreamProperty
 
-
+```
+enum
+{
+  kAudioFileStreamProperty_ReadyToProducePackets           =    'redy',
+  kAudioFileStreamProperty_FileFormat                      =    'ffmt',
+  kAudioFileStreamProperty_DataFormat                      =    'dfmt',
+  kAudioFileStreamProperty_FormatList                      =    'flst',
+  kAudioFileStreamProperty_MagicCookieData                 =    'mgic',
+  kAudioFileStreamProperty_AudioDataByteCount              =    'bcnt',
+  kAudioFileStreamProperty_AudioDataPacketCount            =    'pcnt',
+  kAudioFileStreamProperty_MaximumPacketSize               =    'psze',
+  kAudioFileStreamProperty_DataOffset                      =    'doff',
+  kAudioFileStreamProperty_ChannelLayout                   =    'cmap',
+  kAudioFileStreamProperty_PacketToFrame                   =    'pkfr',
+  kAudioFileStreamProperty_FrameToPacket                   =    'frpk',
+  kAudioFileStreamProperty_PacketToByte                    =    'pkby',
+  kAudioFileStreamProperty_ByteToPacket                    =    'bypk',
+  kAudioFileStreamProperty_PacketTableInfo                 =    'pnfo',
+  kAudioFileStreamProperty_PacketSizeUpperBound            =    'pkub',
+  kAudioFileStreamProperty_AverageBytesPerPacket           =    'abpp',
+  kAudioFileStreamProperty_BitRate                         =    'brat',
+  kAudioFileStreamProperty_InfoDictionary                  =    'info'
+};
+```
 
 
 
