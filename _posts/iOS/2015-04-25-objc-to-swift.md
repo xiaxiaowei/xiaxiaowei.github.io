@@ -41,23 +41,51 @@ func someFunction(externalParameterName localParameterName: Int) {
 ```
 
 如果内部外部使用相同名称，可以用#作为前缀
+
+```
 func someFunction(#parameterName: Int) {
 }
+```
 
 **8）默认形参值**
 有默认值的形参如果没有提供外部形参名称，Swift将自动提供一个同名的外部形参名称（效果和#前缀一样）。
 
 **9）In-Out形参**
 in-out参数不能有默认值，如
+
+```
 func swapTwoInts(inout a: Int, inout b: Int)
+```
+
 调用时参数加前缀&，如
+
+```
 swapTwoInts(&someInt, &anotherInt)
+```
 
 **10）闭包**
 
+```
+func backwards(s1: String, s2: String) -> Bool { 
+	return s1 > s2}var reversed = sort(names, backwards)// reversed is equal to ["Ewa", "Daniella", "Chris", "Barry", "Alex"]
+```
 
+```
+￼reversed = sort(names, { (s1: String, s2: String) -> Bool in 
+	return s1 > s2})
+```
 
+```
+reversed = sort(names, { (s1: String, s2: String) -> Bool in return s1 > s2 } )
+```
+各种简写：
 
+```
+reversed = sort(names, { s1, s2 in return s1 > s2 } )
+reversed = sort(names, { s1, s2 in s1 > s2 } 
+reversed = sort(names, { $0 > $1 } )
+reversed = sort(names, >)
+```
 
 
 
