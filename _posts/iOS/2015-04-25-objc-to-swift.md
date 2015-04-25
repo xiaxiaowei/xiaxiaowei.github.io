@@ -108,6 +108,9 @@ reversed = sort(names, >)
 
 如果您需要将一个很长的闭包表达式作为最后一个参数传递给函数,可以使用 trailing 闭包来增强函数的可读性。
 
+```
+reversed = sort(names) { $0 > $1 }
+```
 
 **12）捕获(Caputure)**
 
@@ -121,28 +124,56 @@ reversed = sort(names, >)
 
 每个成员的数据类型可以是各不相同的，如
 
+```
+enum Barcode {	case UPCA(Int, Int, Int)	case QRCode(String)}
+```
+
 定义变量时，
+
+```
+var productBarcode = Barcode.UPCA(8, 85909_51226, 3)
+```
 
 在switch枚举的时候，可以通过let/var获取关联值
 
+```
+switch productBarcode {case .UPCA(let numberSystem, let identifier, let check): 	println("UPC-A with value of \(numberSystem), \(identifier), \(check).") case .QRCode(let productCode):	println("QR code with value of \(productCode).") }
+```
+
 或使用一个let
 
+```
+switch productBarcode {	case let .UPCA(numberSystem, identifier, check):	println("UPC-A with value of \(numberSystem), \(identifier), \(check).")
+```
 
 **15）枚举的原始值（Raw Values）**
 
-
 原始值必须是相同类型的。
 
+```
+enum ASCIIControlCharacter: Character {	case Tab = "\t"	case LineFeed = "\n"	case CarriageReturn = "\r" 5. }
+```
 原始值与关联值的区别：原始值和关联值是不相同的。当你开始在你的代码中定义枚举的时候原始值是被预先 填充的值,像上述三个 ASCII 码。对于一个特定的枚举成员,它的原始值始终是相同的。 关联值是当你在创建一个基于枚举成员的新常量或变量时才会被设置,并且每次当你这么做 得时候,它的值可以是不同的。
 
 获取枚举成员的原始值
 
+```
+let earthsOrder = Planet.Earth.toRaw()
+```
 
 通过原始值找到枚举成员
 
+```
+let possiblePlanet = Planet.fromRaw(7)
+```
+
 fromRaw返回时是可选类型，上面possiblePlanet是Planet?类型
 
-
+```
+let positionToFind = 9if let somePlanet = Planet.fromRaw(positionToFind) { 
+	switch somePlanet {		case .Earth:			println("Mostly harmless")		default:			println("Not a safe place for humans")	}} 
+else {	println("There isn't a planet at position \(positionToFind)")}// prints "There isn't a planet at position 9
+```
 
 **16）结构体**
 
