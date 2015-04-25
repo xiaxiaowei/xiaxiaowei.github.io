@@ -23,16 +23,23 @@ Swift数组不同于NSArray，类型必须确定，如Array<Int>
 
 **4）enumerate 函数**
 enumerate 返回一个由每一个数据项索引值和数据值组成的键值对组，如
-     for (index, value) in enumerate(shoppingList)
+
+```
+for (index, value) in enumerate(shoppingList)
+```
 
 **5）switch**
-Swift 的 switch 语句比 C 语言中更加强大。在 C 语言中,如果􏿒个 case 不小心漏写了 break,这个 case 就会“掉入”下一个 case,Swift 无需写 break,所以不会发生这种“掉入”的情况。Case 还可以匹配更多的类型模式,包括范围(range)匹配,元组(tuple)和特定类型的􏿓述。
+Swift 的 switch 语句比 C 语言中更加强大。在 C 语言中,如果某个 case 不小心漏写了 break,这个 case 就会“掉入”下一个 case,Swift 无需写 break,所以不会发生这种“掉入”的情况。Case 还可以匹配更多的类型模式,包括范围(range)匹配,元组(tuple)和特定类型的描述。
 
 **6）Fallthrough**
 
 **7）内部形参名称/外部形参名称**
+
+```
 func someFunction(externalParameterName localParameterName: Int) {
 }
+```
+
 如果内部外部使用相同名称，可以用#作为前缀
 func someFunction(#parameterName: Int) {
 }
