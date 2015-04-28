@@ -7,7 +7,7 @@ keywords: JUnit
 description: 
 ---
 
-> Junit的测试包、已经测试方法的顺序控制
+> Junit的测试包、以及测试方法的顺序控制
 
 ## TestSuite
 
