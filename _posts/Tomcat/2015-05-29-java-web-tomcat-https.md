@@ -9,7 +9,8 @@ description:
 
 > 说明如何生成SSL证书，并配置Tocmat的Https端口
 
-##1. 自签名CA证书（根证书）
+## 1. 自签名CA证书（根证书）
+
 > CA证书的制作有两个步骤
 
 1. 创建私钥文件
@@ -24,7 +25,7 @@ openssl genrsa -out myCA.key 2048
 openssl req -x509 -new -key myCA.key -out myCA.cer -days 730 -subj /CN="My CA"
 ```
 
-##2.自签名SSL证书（叶证书）
+## 2.自签名SSL证书（叶证书）
 
 1.创建私钥文件
 
@@ -57,7 +58,7 @@ openssl pkcs12 -export -in server.cer -inkey server.key -out server.p12 -name "s
 keytool -importkeystore -v -srckeystore server.p12 -srcstoretype pkcs12 -srcstorepass 123123 -destkeystore server.keystore -deststoretype jks -deststorepass 123123
 ```
 
-##3.使用SSL证书配置Tomcat的Https端口
+## 3.使用SSL证书配置Tomcat的Https端口
 
 修改tomcat的server.xml文件，添加Https配置
 ```
