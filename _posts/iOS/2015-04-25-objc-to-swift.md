@@ -180,6 +180,8 @@ else {	println("There isn't a planet at position \(positionToFind)")}// print
 结构体是值类型。Swift 中,所有的基本类型:整数(Integer)、浮点数(floating-point)、布尔值(Booleans)、字符串(string)、数组(array)和字典(dictionaries),都是值类型,并且都是以结构体的形式在后台所实现。
 注意：NSArray/NSDictionary是类，为引用类型。
 
+所有结构体都有一个自动生成的成员逐一初始化器。
+
 **17）类**
 
 类是引用类型。
@@ -187,3 +189,6 @@ else {	println("There isn't a planet at position \(positionToFind)")}// print
 **18）等价于（===）和等于（==）**
 
 “等价于”表示两个类类型(class type)的常量或者变量引用同一个类实例。 “等于”表示两个实例的值“相等”或“相同”,判定时要遵照类设计者定义定义的评判标准,因 此相比于“相等”,这是一种更加合适的叫法。
+
+**19）**
+
